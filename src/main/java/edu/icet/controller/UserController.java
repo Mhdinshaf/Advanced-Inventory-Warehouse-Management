@@ -32,8 +32,8 @@ public class UserController {
 
 
     @GetMapping("/Search-By-Id/{userId}")
-    public void searchByID(@PathVariable Integer userId) {
-        userService.searchByID(userId);
+    public UsersDto searchByID(@PathVariable Integer userId) {
+        return userService.searchByID(userId);
     }
 
     @GetMapping("/GetAll")
