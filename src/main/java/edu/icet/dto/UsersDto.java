@@ -16,6 +16,6 @@ public class UsersDto {
     private String password;
     private Role role;
     private String warehouseId;
-    private Integer phoneNumber;
+    private String phoneNumber;
 
 }

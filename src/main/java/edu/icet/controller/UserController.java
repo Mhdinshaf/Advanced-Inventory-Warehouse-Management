@@ -16,24 +16,24 @@ public class UserController {
     final UserService userService;
 
     @PostMapping("/Add")
-    public void addUsers(UsersDto user) {
+    public void addUsers(@RequestBody UsersDto user) {
         userService.addUsers(user);
     }
 
     @PutMapping("/Update")
-    public void updateUsers(UsersDto user) {
+    public void updateUsers(@RequestBody UsersDto user) {
         userService.updateUsers(user);
     }
 
-    @DeleteMapping("/Delete-By-Id/{Id}")
-    public void deleteUsers(Integer userId) {
+    @DeleteMapping("/Delete-By-Id/{userId}")
+    public void deleteUsers(@PathVariable Integer userId) {
         userService.deleteUsers(userId);
     }
 
 
-    @GetMapping("/Search-By-Id/{Id}")
-    public void searchByID(Integer userId) {
-        userService.searchByID(userId);
+    @GetMapping("/Search-By-Id/{userId}")
+    public UsersDto searchByID(@PathVariable Integer userId) {
+        return userService.searchByID(userId);
     }
 
     @GetMapping("/GetAll")
