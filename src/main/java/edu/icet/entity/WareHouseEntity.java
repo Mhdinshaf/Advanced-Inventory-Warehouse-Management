@@ -17,4 +17,5 @@ public class WareHouseEntity {
     private Integer warehouseId;
     private String name;
     private String address;
+    private String userId;
 }

@@ -7,7 +7,9 @@ import lombok.*;
 @NoArgsConstructor
 @ToString
 public class WareHouseDTO {
+
     private Integer warehouseId;
     private String name;
     private String address;
+    private String userId;
 }
