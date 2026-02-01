@@ -15,7 +15,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class  CategoriesImpl implements CategoriesService{
     final CategoriesRepository categoriesRepository;
-   final ModelMapper modelMapper;
+    final ModelMapper modelMapper;
 
     @Override
     public void addCategories(CategoriesDTO categoriesDTO) {
