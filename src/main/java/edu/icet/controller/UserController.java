@@ -17,27 +17,32 @@ public class UserController {
 
     @PostMapping("/Add")
     public void addUsers(@RequestBody UsersDto user) {
+
         userService.addUsers(user);
     }
 
     @PutMapping("/Update")
     public void updateUsers(@RequestBody UsersDto user) {
+
         userService.updateUsers(user);
     }
 
     @DeleteMapping("/Delete-By-Id/{userId}")
     public void deleteUsers(@PathVariable Integer userId) {
+
         userService.deleteUsers(userId);
     }
 
 
     @GetMapping("/Search-By-Id/{userId}")
     public UsersDto searchByID(@PathVariable Integer userId) {
+
         return userService.searchByID(userId);
     }
 
     @GetMapping("/GetAll")
     public List<UsersDto> getAll() {
+
         return userService.getAll();
     }
 }
