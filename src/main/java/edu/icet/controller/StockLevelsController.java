@@ -1,7 +1,7 @@
 package edu.icet.controller;
 
 import edu.icet.dto.StockLevelDTO;
-import edu.icet.service.impl.StockLevelService;
+import edu.icet.service.impl.StockLevelImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,7 +11,7 @@ import java.util.List;
 @RequestMapping("/StockLevel")
 @RequiredArgsConstructor
 public class StockLevelsController {
-        final StockLevelService stockLevelService;
+        final StockLevelImpl stockLevelService;
 
     @PostMapping("/Add")
     public void addSupplier(@RequestBody StockLevelDTO stockLevelDTO) {
@@ -23,12 +23,12 @@ public class StockLevelsController {
             stockLevelService.updateSupplier(stockLevelDTO);
     }
 
-    @DeleteMapping("/Delete-By-Id/{userId}")
+    @DeleteMapping("/Delete-By-Id/{StockId}")
     public void deleteSupplier(@PathVariable Integer stockId) {
         stockLevelService.deleteSupplier(stockId);
     }
 
-    @GetMapping("/Search-By-Id/{userId}")
+    @GetMapping("/Search-By-Id/{StockId}")
     public StockLevelDTO searchByID(@PathVariable Integer stockId) {
       return stockLevelService.searchByID(stockId);
     }

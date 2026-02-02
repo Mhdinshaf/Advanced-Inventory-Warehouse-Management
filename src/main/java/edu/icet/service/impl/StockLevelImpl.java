@@ -14,7 +14,7 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-public class StockLevelService implements StockLevelServiceInterFace {
+public class StockLevelImpl implements StockLevelServiceInterFace {
    final StockLevelRepository stockLevelRepository;
    final ModelMapper modelMapper;
 
