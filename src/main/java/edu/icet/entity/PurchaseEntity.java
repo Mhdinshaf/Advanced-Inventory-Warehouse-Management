@@ -1,5 +1,6 @@
 package edu.icet.entity;
 
+import edu.icet.util.Status;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -10,15 +11,17 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @ToString
 @Entity
-public class ProductEntity {
+public class PurchaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer productId;
-    private String name;
-    private String categoryId;
+    private Integer purchaseId;
+    private String supplierId;
+    private String userId;
+    private String orderdate;
+    private Status status;
 }

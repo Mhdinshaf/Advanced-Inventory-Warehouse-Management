@@ -47,7 +47,7 @@ public class StockLevelImpl implements StockLevelServiceInterFace {
         List<StockLevelEntity>stockLevelEntities=stockLevelRepository.findAll();
         ArrayList<StockLevelDTO> stockLevelDTOArrayList=new ArrayList<>();
        stockLevelEntities.forEach(stockLevelEntity -> {
-           StockLevelDTO stockLevelDTO=modelMapper.map(stockLevelEntities, StockLevelDTO.class);
+           StockLevelDTO stockLevelDTO=modelMapper.map(stockLevelEntity, StockLevelDTO.class);
            stockLevelDTOArrayList.add(stockLevelDTO);
         });
         return stockLevelDTOArrayList;

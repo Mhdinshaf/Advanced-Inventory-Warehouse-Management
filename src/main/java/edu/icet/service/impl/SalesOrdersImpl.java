@@ -17,6 +17,7 @@ import java.util.List;
 public class SalesOrdersImpl implements SalesOrdersServiceInterFace {
     final SalesOrdersRepository salesOrdersRepository;
     final ModelMapper modelMapper;
+
     @Override
     public void addSalesOrders(SalesOrdersDTO salesOrdersDTO) {
         SalesOrdersEntity salesOrdersEntity = modelMapper.map(salesOrdersDTO, SalesOrdersEntity.class);
@@ -47,7 +48,7 @@ public class SalesOrdersImpl implements SalesOrdersServiceInterFace {
         List<SalesOrdersEntity> salesOrdersEntities=salesOrdersRepository.findAll();
         ArrayList<SalesOrdersDTO> salesOrdersDTOArrayList=new ArrayList<>();
        salesOrdersEntities.forEach(salesOrdersEntity -> {
-           SalesOrdersDTO salesOrdersDTO=modelMapper.map(salesOrdersEntities, SalesOrdersDTO.class);
+           SalesOrdersDTO salesOrdersDTO=modelMapper.map(salesOrdersEntity, SalesOrdersDTO.class);
            salesOrdersDTOArrayList.add(salesOrdersDTO);
         });
         return  salesOrdersDTOArrayList;

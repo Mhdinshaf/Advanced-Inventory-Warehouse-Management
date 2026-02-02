@@ -46,7 +46,7 @@ public class AlertsImpl implements AlertsServiceInterFace {
       List<AlertsEntity>alertsEntities=alertsRepository.findAll();
         ArrayList<AlertsDTO>alertsDTOArrayList=new ArrayList<>();
         alertsEntities.forEach(alertsEntity -> {
-            AlertsDTO alertsDTO = modelMapper.map(alertsEntities, AlertsDTO.class);
+            AlertsDTO alertsDTO = modelMapper.map(alertsEntity, AlertsDTO.class);
             alertsDTOArrayList.add(alertsDTO);
         });
         return alertsDTOArrayList;

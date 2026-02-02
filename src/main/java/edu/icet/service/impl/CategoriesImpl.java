@@ -46,7 +46,7 @@ public class  CategoriesImpl implements CategoriesService{
         List<CategoriesEntity> categoriesEntities=categoriesRepository.findAll();
         ArrayList<CategoriesDTO> categoriesDTOArrayList=new ArrayList<>();
         categoriesEntities.forEach(categoriesEntity -> {
-           CategoriesDTO categoriesDTO=modelMapper.map(categoriesEntities, CategoriesDTO.class);
+           CategoriesDTO categoriesDTO=modelMapper.map(categoriesEntity, CategoriesDTO.class);
            categoriesDTOArrayList.add(categoriesDTO);
         });
         return  categoriesDTOArrayList;

@@ -1,9 +1,6 @@
 package edu.icet.service.impl;
 
-import edu.icet.dto.CategoriesDTO;
 import edu.icet.dto.ProductDto;
-import edu.icet.entity.AlertsEntity;
-import edu.icet.entity.CategoriesEntity;
 import edu.icet.entity.ProductEntity;
 import edu.icet.repository.ProductRepository;
 import edu.icet.service.ProductService;
@@ -17,10 +14,9 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 public class ProductImpl implements ProductService {
+
     final ModelMapper modelMapper;
     final ProductRepository productRepository;
-
-
 
     @Override
     public void addProduct(ProductDto product) {
@@ -51,7 +47,7 @@ public class ProductImpl implements ProductService {
         List<ProductEntity> productEntities=productRepository.findAll();
         ArrayList<ProductDto> productDtoArrayList=new ArrayList<>();
         productEntities.forEach(productEntity -> {
-            ProductDto productDto=modelMapper.map(productEntities, ProductDto.class);
+            ProductDto productDto=modelMapper.map(productEntity, ProductDto.class);
             productDtoArrayList.add(productDto);
         });
         return  productDtoArrayList;

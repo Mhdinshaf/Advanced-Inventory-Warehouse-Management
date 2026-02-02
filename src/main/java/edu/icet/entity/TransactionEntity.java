@@ -14,11 +14,14 @@ import lombok.ToString;
 @NoArgsConstructor
 @ToString
 @Entity
-public class ProductEntity {
+public class TransactionEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer productId;
-    private String name;
-    private String categoryId;
+    private Integer transactionId;
+    private String productId;
+    private String warehouseid;
+    private String type;
+    private String qty;
+    private String time;
 }
