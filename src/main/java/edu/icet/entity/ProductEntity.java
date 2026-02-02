@@ -14,11 +14,11 @@ import lombok.ToString;
 @NoArgsConstructor
 @ToString
 @Entity
-public class CategoriesEntity {
+public class ProductEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer categoryId;
+    private Integer productId;
     private String name;
-    private String description;
+    private String categoryId;
 }
