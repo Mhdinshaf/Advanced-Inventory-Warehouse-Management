@@ -24,18 +24,19 @@ public class CategoriesController{
             categoriesService.updateCategories(categoriesDTO);
     }
 
-    @DeleteMapping("/Delete-By-Id/{userId}")
+    @DeleteMapping("/Delete-By-Id/{CategoryId}")
     public void deleteCategories(@PathVariable Integer categoryId) {
             categoriesService.deleteCategories(categoryId);
     }
 
-    @GetMapping("/Search-By-Id/{userId}")
+    @GetMapping("/Search-By-Id/{CategoryId}")
     public CategoriesDTO searchByID(@PathVariable Integer categoryId) {
         return categoriesService.searchByID(categoryId);
     }
 
     @GetMapping("/GetAll")
     public List<CategoriesDTO> getAll() {
+
         return categoriesService.getAll();
     }
 }
