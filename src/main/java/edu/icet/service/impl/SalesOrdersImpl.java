@@ -47,7 +47,7 @@ public class SalesOrdersImpl implements SalesOrdersServiceInterFace {
         List<SalesOrdersEntity> salesOrdersEntities=salesOrdersRepository.findAll();
         ArrayList<SalesOrdersDTO> salesOrdersDTOArrayList=new ArrayList<>();
        salesOrdersEntities.forEach(userEntity -> {
-           SalesOrdersDTO salesOrdersDTO=modelMapper.map(salesOrdersEntities, SalesOrdersDTO.class);
+           SalesOrdersDTO salesOrdersDTO=modelMapper.map(salesOrdersEntity, SalesOrdersDTO.class);
            salesOrdersDTOArrayList.add(salesOrdersDTO);
         });
         return  salesOrdersDTOArrayList;
