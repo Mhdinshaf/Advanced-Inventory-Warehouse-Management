@@ -21,6 +21,7 @@ public class SalesOrdersImpl implements SalesOrdersServiceInterFace {
     public void addSalesOrders(SalesOrdersDTO salesOrdersDTO) {
         SalesOrdersEntity salesOrdersEntity = modelMapper.map(salesOrdersDTO, SalesOrdersEntity.class);
        salesOrdersRepository.save(salesOrdersEntity);
+
     }
 
     @Override
