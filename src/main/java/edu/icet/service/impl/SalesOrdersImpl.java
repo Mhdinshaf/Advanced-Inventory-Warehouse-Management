@@ -17,6 +17,7 @@ import java.util.List;
 public class SalesOrdersImpl implements SalesOrdersServiceInterFace {
     final SalesOrdersRepository salesOrdersRepository;
     final ModelMapper modelMapper;
+
     @Override
     public void addSalesOrders(SalesOrdersDTO salesOrdersDTO) {
         SalesOrdersEntity salesOrdersEntity = modelMapper.map(salesOrdersDTO, SalesOrdersEntity.class);

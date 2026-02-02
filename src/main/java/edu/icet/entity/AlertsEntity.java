@@ -1,5 +1,6 @@
 package edu.icet.entity;
 
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -14,11 +15,10 @@ import lombok.ToString;
 @NoArgsConstructor
 @ToString
 @Entity
-public class CategoriesEntity {
-
+public class AlertsEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer categoryId;
-    private String name;
-    private String description;
+    private Integer alertId;
+    private String productId;
+    private int  minStockLevel;
 }
