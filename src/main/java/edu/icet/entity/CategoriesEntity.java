@@ -15,6 +15,7 @@ import lombok.ToString;
 @ToString
 @Entity
 public class CategoriesEntity {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer categoryId;
